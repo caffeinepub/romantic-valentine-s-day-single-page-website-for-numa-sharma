@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1.5rem;
+        
+        /* Romantic Valentine's Day Color Palette */
+        /* Blush Pink */
+        --romantic-blush: 0.88 0.15 15;
+        /* Deep Red/Rose */
+        --romantic-rose: 0.55 0.22 15;
+        /* Champagne Gold */
+        --romantic-champagne: 0.75 0.12 65;
+        /* Warm White */
+        --romantic-white: 0.98 0.01 65;
+        /* Paper/Card Background */
+        --romantic-paper: 0.96 0.02 45;
+        /* Text Color */
+        --romantic-text: 0.35 0.05 15;
+        
+        /* Base theme colors using romantic palette */
+        --background: 0.98 0.01 65;
+        --foreground: 0.35 0.05 15;
+        --card: 0.96 0.02 45;
+        --card-foreground: 0.35 0.05 15;
+        --popover: 0.96 0.02 45;
+        --popover-foreground: 0.35 0.05 15;
+        --primary: 0.55 0.22 15;
+        --primary-foreground: 0.98 0.01 65;
+        --secondary: 0.88 0.15 15;
+        --secondary-foreground: 0.35 0.05 15;
+        --muted: 0.94 0.03 45;
+        --muted-foreground: 0.55 0.08 15;
+        --accent: 0.75 0.12 65;
+        --accent-foreground: 0.35 0.05 15;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.98 0.01 65;
+        --border: 0.75 0.12 65 / 30%;
+        --input: 0.75 0.12 65 / 30%;
+        --ring: 0.55 0.22 15;
+    }
+
+    .dark {
+        --background: 0.25 0.05 15;
+        --foreground: 0.98 0.01 65;
+        --card: 0.30 0.06 15;
+        --card-foreground: 0.98 0.01 65;
+        --popover: 0.30 0.06 15;
+        --popover-foreground: 0.98 0.01 65;
+        --primary: 0.88 0.15 15;
+        --primary-foreground: 0.25 0.05 15;
+        --secondary: 0.35 0.08 15;
+        --secondary-foreground: 0.98 0.01 65;
+        --muted: 0.35 0.08 15;
+        --muted-foreground: 0.75 0.08 45;
+        --accent: 0.75 0.12 65;
+        --accent-foreground: 0.98 0.01 65;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.98 0.01 65;
+        --border: 0.75 0.12 65 / 20%;
+        --input: 0.75 0.12 65 / 20%;
+        --ring: 0.88 0.15 15;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Georgia', 'Times New Roman', serif;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    /* Custom romantic color utilities */
+    .text-romantic-rose {
+        color: oklch(var(--romantic-rose));
+    }
+    
+    .text-romantic-blush {
+        color: oklch(var(--romantic-blush));
+    }
+    
+    .text-romantic-champagne {
+        color: oklch(var(--romantic-champagne));
+    }
+    
+    .text-romantic-white {
+        color: oklch(var(--romantic-white));
+    }
+    
+    .text-romantic-text {
+        color: oklch(var(--romantic-text));
+    }
+    
+    .bg-romantic-paper {
+        background-color: oklch(var(--romantic-paper));
+    }
+    
+    .bg-romantic-white {
+        background-color: oklch(var(--romantic-white));
+    }
+    
+    .border-romantic-champagne {
+        border-color: oklch(var(--romantic-champagne));
+    }
+    
+    /* Glow effects */
+    .glow-text {
+        text-shadow: 
+            0 0 20px oklch(var(--romantic-rose) / 0.3),
+            0 0 40px oklch(var(--romantic-rose) / 0.2),
+            0 0 60px oklch(var(--romantic-rose) / 0.1);
+    }
+    
+    .glow-border {
+        box-shadow: 
+            0 0 20px oklch(var(--romantic-rose) / 0.3),
+            0 0 40px oklch(var(--romantic-rose) / 0.2);
+    }
+    
+    .shadow-romantic {
+        box-shadow: 
+            0 10px 30px -5px oklch(var(--romantic-rose) / 0.15),
+            0 4px 6px -2px oklch(var(--romantic-rose) / 0.1);
+    }
+    
+    .shadow-romantic-lg {
+        box-shadow: 
+            0 20px 50px -10px oklch(var(--romantic-rose) / 0.25),
+            0 10px 20px -5px oklch(var(--romantic-rose) / 0.15);
+    }
+    
+    /* Love letter card styling */
+    .love-letter-card {
+        background: linear-gradient(
+            135deg,
+            oklch(var(--romantic-paper)) 0%,
+            oklch(var(--romantic-white)) 100%
+        );
+    }
+    
+    /* Gallery frame */
+    .gallery-frame {
+        aspect-ratio: 4/3;
+        position: relative;
+    }
+    
+    .gallery-frame-container {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+    
+    /* Reason card hover effect */
+    .reason-card {
+        transition: all 0.3s ease;
+    }
+    
+    .reason-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 15px 40px -10px oklch(var(--romantic-rose) / 0.2),
+            0 6px 12px -4px oklch(var(--romantic-rose) / 0.15);
+    }
+    
+    /* Surprise button */
+    .surprise-button {
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+}
+
+@layer utilities {
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 
+                0 0 20px oklch(var(--romantic-rose) / 0.4),
+                0 0 40px oklch(var(--romantic-rose) / 0.2);
+        }
+        50% {
+            box-shadow: 
+                0 0 30px oklch(var(--romantic-rose) / 0.6),
+                0 0 60px oklch(var(--romantic-rose) / 0.3);
+        }
+    }
+    
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .animate-float-delayed {
+        animation: float 3s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+}
+
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap');
+
+.font-cursive {
+    font-family: 'Great Vibes', 'Dancing Script', cursive;
+}
+
+.font-serif {
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Hero name special styling */
+.hero-name {
+    background: linear-gradient(
+        135deg,
+        oklch(var(--romantic-rose)) 0%,
+        oklch(var(--romantic-blush)) 50%,
+        oklch(var(--romantic-champagne)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

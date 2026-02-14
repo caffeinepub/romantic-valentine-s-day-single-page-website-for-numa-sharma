@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates the single-page Valentine's Day website with all sections, background animations, and audio player.",
+  "frontend/src/components/sections/HeroSection.tsx": "Hero section featuring \"Numa Sharma\" in elegant cursive font with glowing effects and floating heart animations.",
+  "frontend/src/components/sections/LoveMessageSection.tsx": "Love message section displaying a heartfelt letter in a romantic card with paper-like styling.",
+  "frontend/src/components/sections/GallerySection.tsx": "Photo gallery section displaying 8 romantic images (6 generated + 2 user-uploaded) in heart-shaped frames with hover effects and staggered fade-in animations.",
+  "frontend/src/components/gallery/FramedGalleryImage.tsx": "Reusable gallery image component with heart frame overlay and smooth hover interactions.",
+  "frontend/src/components/sections/ReasonsSection.tsx": "Interactive accordion section with 12 reasons revealing sweet messages on click/tap.",
+  "frontend/src/components/sections/CountdownSection.tsx": "Section containing the live Valentine's Day countdown timer in a romantic card.",
+  "frontend/src/components/CountdownTimer.tsx": "Live countdown timer component displaying days, hours, minutes, and seconds until Valentine's Day.",
+  "frontend/src/hooks/useValentinesCountdown.ts": "Custom hook that calculates and updates countdown to next Valentine's Day every second.",
+  "frontend/src/components/AudioPlayerToggle.tsx": "Fixed audio player toggle button for romantic background music with mute/unmute functionality.",
+  "frontend/src/components/SurpriseButton.tsx": "Prominent surprise button that triggers the romantic modal message.",
+  "frontend/src/components/SurpriseModal.tsx": "Modal dialog displaying the special romantic message using shadcn Dialog component.",
+  "frontend/src/components/Footer.tsx": "Footer component with the required love message for Numa Sharma.",
+  "frontend/src/components/background/RomanticBackground.tsx": "Animated background with falling heart-shaped petals using HTML5 Canvas and gradient overlay, fixed TypeScript error by providing null initial value for animationFrameRef.",
+  "frontend/src/index.css": "Global styles with romantic Valentine's Day color palette (blush pink, deep red, champagne gold), custom fonts, glow effects, and animations.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color tokens, cursive fonts, custom animations, and increased border radius.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are needed for this frontend-only application."
+}

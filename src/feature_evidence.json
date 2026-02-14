@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-the-two-user-uploaded-images-messenger-creation-358ddd99-4dc4-4b99-9ab8-f8f5604864ca-jpeg-and-messenger-creation-358ddd99-4dc4-4b99-9ab8-f8f5604864ca-1-jpeg-to-the-website-by-including-them-as-additional-items-in-the-existing-romantic-photo-gallery-the-our-beautiful-moments-section",
+      "featureTitle": "Add the two user-uploaded images (\"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA.jpeg\" and \"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA-1.jpeg\") to the website by including them as additional items in the existing romantic photo gallery (the \"Our Beautiful Moments\" section).",
+      "files": [
+        "frontend/src/components/sections/GallerySection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

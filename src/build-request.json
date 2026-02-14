@@ -1,0 +1,41 @@
+{
+  "kind": "build_request",
+  "title": "Add uploaded photos to the Valentine’s website gallery",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "text": "Add the two user-uploaded images (\"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA.jpeg\" and \"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA-1.jpeg\") to the website by including them as additional items in the existing romantic photo gallery (the \"Our Beautiful Moments\" section).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4",
+          "msg-7"
+        ],
+        "quotes": [
+          "Add this image in website",
+          "Your choice"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Both uploaded image files are added to the frontend as static assets and are accessible via stable URLs at runtime (no broken images in production build).",
+        "The gallery in frontend/src/components/sections/GallerySection.tsx includes new entries for both uploaded images and renders them using the existing FramedGalleryImage component.",
+        "The new gallery items have English alt text (e.g., “Our beautiful moment” / “A special memory”) and do not break the responsive grid layout on mobile and desktop.",
+        "No changes are required to the backend; the site continues to function as a static single-page experience with the new images displayed."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/components/ui (read-only shadcn components).",
+    "Do not modify immutable paths listed in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Keep the backend as a single-actor Motoko canister; no backend work is needed for this change."
+  ],
+  "nonGoals": [
+    "Adding new sections or changing the overall site structure beyond inserting the uploaded photos into the existing gallery.",
+    "Implementing uploads, image editing, or a CMS/admin interface for managing gallery images."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

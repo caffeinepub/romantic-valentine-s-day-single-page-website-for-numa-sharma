@@ -1,0 +1,34 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add uploaded photos to the existing Valentine’s gallery",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Include two user-uploaded photos as additional static gallery items in the existing “Our Beautiful Moments” section using the existing FramedGalleryImage rendering.",
+      "acceptanceCriteria": [
+        "Both uploaded image files are added to the frontend as static assets and are accessible via stable URLs at runtime (no broken images in production build).",
+        "The gallery in frontend/src/components/sections/GallerySection.tsx includes new entries for both uploaded images and renders them using the existing FramedGalleryImage component.",
+        "The new gallery items have English alt text (e.g., “Our beautiful moment” / “A special memory”) and do not break the responsive grid layout on mobile and desktop.",
+        "No changes are required to the backend; the site continues to function as a static single-page experience with the new images displayed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded image as a public static asset so it is served at runtime via a stable URL."
+        },
+        {
+          "path": "frontend/public/assets/Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA-1.jpeg",
+          "operation": "create",
+          "description": "Add the uploaded image as a public static asset so it is served at runtime via a stable URL."
+        },
+        {
+          "path": "frontend/src/components/sections/GallerySection.tsx",
+          "operation": "modify",
+          "description": "Append two new entries to the existing galleryImages list referencing the new public asset paths and provide English alt text; ensure they render via the existing FramedGalleryImage component and preserve the current responsive grid behavior."
+        }
+      ]
+    }
+  ]
+}
