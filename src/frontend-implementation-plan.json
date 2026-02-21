@@ -1,32 +1,47 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add uploaded photos to the existing Valentine’s gallery",
+  "title": "Add two uploaded photos to 'Our Beautiful Moments' section and arrange all photos",
   "requirements": [
     {
-      "id": "REQ-12",
-      "summary": "Include two user-uploaded photos as additional static gallery items in the existing “Our Beautiful Moments” section using the existing FramedGalleryImage rendering.",
+      "id": "REQ-1",
+      "summary": "Add the two uploaded photos (IMG_20260221_145437.jpg and IMG_20260221_145437-1.jpg) to the 'Our Beautiful Moments' gallery section alongside existing photos",
       "acceptanceCriteria": [
-        "Both uploaded image files are added to the frontend as static assets and are accessible via stable URLs at runtime (no broken images in production build).",
-        "The gallery in frontend/src/components/sections/GallerySection.tsx includes new entries for both uploaded images and renders them using the existing FramedGalleryImage component.",
-        "The new gallery items have English alt text (e.g., “Our beautiful moment” / “A special memory”) and do not break the responsive grid layout on mobile and desktop.",
-        "No changes are required to the backend; the site continues to function as a static single-page experience with the new images displayed."
+        "Both uploaded photos (IMG_20260221_145437.jpg and IMG_20260221_145437-1.jpg) are visible in the GallerySection component",
+        "Photos are stored as static assets in frontend/public/assets/",
+        "All photos in the gallery section are displayed with consistent styling using FramedGalleryImage component"
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA.jpeg",
+          "path": "frontend/public/assets/IMG_20260221_145437.jpg",
           "operation": "create",
-          "description": "Add the uploaded image as a public static asset so it is served at runtime via a stable URL."
+          "description": "Copy the uploaded photo IMG_20260221_145437.jpg to the public assets directory so it can be referenced as a static asset in the gallery section"
         },
         {
-          "path": "frontend/public/assets/Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA-1.jpeg",
+          "path": "frontend/public/assets/IMG_20260221_145437-1.jpg",
           "operation": "create",
-          "description": "Add the uploaded image as a public static asset so it is served at runtime via a stable URL."
+          "description": "Copy the uploaded photo IMG_20260221_145437-1.jpg to the public assets directory so it can be referenced as a static asset in the gallery section"
         },
         {
           "path": "frontend/src/components/sections/GallerySection.tsx",
           "operation": "modify",
-          "description": "Append two new entries to the existing galleryImages list referencing the new public asset paths and provide English alt text; ensure they render via the existing FramedGalleryImage component and preserve the current responsive grid behavior."
+          "description": "Update the GallerySection component to include the two new photos (IMG_20260221_145437.jpg and IMG_20260221_145437-1.jpg) in the gallery grid. Add them to the existing array of gallery images while maintaining the FramedGalleryImage component usage and staggered fade-in animation pattern with appropriate delay values"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Arrange all photos in the 'Our Beautiful Moments' gallery section in an organized grid layout",
+      "acceptanceCriteria": [
+        "Gallery displays all photos (existing + newly added) in a clean, organized grid",
+        "Grid layout is responsive and maintains visual balance across different screen sizes",
+        "Photo arrangement follows the existing staggered fade-in animation pattern"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/GallerySection.tsx",
+          "operation": "modify",
+          "description": "Organize all gallery photos (including the 6 generated gallery images, the 4 existing uploaded photos, and the 2 newly added photos) in a balanced grid layout. Ensure the grid container classes maintain responsive behavior across screen sizes and that each FramedGalleryImage receives an appropriate staggered delay value for the fade-in animation. Keep the intersection observer-based animation logic intact"
         }
       ]
     }

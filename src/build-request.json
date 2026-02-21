@@ -1,38 +1,55 @@
 {
   "kind": "build_request",
-  "title": "Add uploaded photos to the Valentine’s website gallery",
+  "title": "Add two uploaded photos to 'Our Beautiful Moments' section and arrange all photos",
+  "projectName": "Valentine's Day Website",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-12",
-      "text": "Add the two user-uploaded images (\"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA.jpeg\" and \"Messenger_creation_358DDD99-4DC4-4B99-9AB8-F8F5604864CA-1.jpeg\") to the website by including them as additional items in the existing romantic photo gallery (the \"Our Beautiful Moments\" section).",
+      "id": "REQ-1",
+      "text": "Add the two uploaded photos (IMG_20260221_145437.jpg and IMG_20260221_145437-1.jpg) to the 'Our Beautiful Moments' gallery section alongside existing photos",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4",
-          "msg-7"
+          "msg-10"
         ],
         "quotes": [
-          "Add this image in website",
-          "Your choice"
+          "Add this photo in \"our beautiful moments section\" arrange all photo"
         ]
       },
       "acceptanceCriteria": [
-        "Both uploaded image files are added to the frontend as static assets and are accessible via stable URLs at runtime (no broken images in production build).",
-        "The gallery in frontend/src/components/sections/GallerySection.tsx includes new entries for both uploaded images and renders them using the existing FramedGalleryImage component.",
-        "The new gallery items have English alt text (e.g., “Our beautiful moment” / “A special memory”) and do not break the responsive grid layout on mobile and desktop.",
-        "No changes are required to the backend; the site continues to function as a static single-page experience with the new images displayed."
+        "Both uploaded photos (IMG_20260221_145437.jpg and IMG_20260221_145437-1.jpg) are visible in the GallerySection component",
+        "Photos are stored as static assets in frontend/public/assets/",
+        "All photos in the gallery section are displayed with consistent styling using FramedGalleryImage component"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Arrange all photos in the 'Our Beautiful Moments' gallery section in an organized grid layout",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-10"
+        ],
+        "quotes": [
+          "arrange all photo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gallery displays all photos (existing + newly added) in a clean, organized grid",
+        "Grid layout is responsive and maintains visual balance across different screen sizes",
+        "Photo arrangement follows the existing staggered fade-in animation pattern"
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/components/ui (read-only shadcn components).",
-    "Do not modify immutable paths listed in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
-    "Keep the backend as a single-actor Motoko canister; no backend work is needed for this change."
+    "Do not modify the FramedGalleryImage component structure",
+    "Maintain the existing intersection observer-based fade-in animation for the gallery",
+    "Keep the romantic theme and styling consistent with the existing design"
   ],
   "nonGoals": [
-    "Adding new sections or changing the overall site structure beyond inserting the uploaded photos into the existing gallery.",
-    "Implementing uploads, image editing, or a CMS/admin interface for managing gallery images."
+    "Adding image upload functionality",
+    "Implementing image editing features",
+    "Creating backend storage for images"
   ],
   "imageRequirements": {
     "required": [],
